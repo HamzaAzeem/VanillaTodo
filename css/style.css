@@ -30,6 +30,53 @@ li.task:not(:last-child) {
 	border-bottom: 1px solid white;
 }
 
+input.taskCheckbox {
+	position: relative;
+	float: left;
+	margin-right: 10px;
+	-webkit-appearance: none;
+	width: 15px;
+	height: 15px;
+	border: 1px solid white;
+	border-radius: 5px;
+	outline: none;
+	margin-left: 5px;
+	text-align: center;
+	cursor: pointer;
+	transition: all 0.1s ease-in-out;
+		-webkit-transition: all 0.1s ease-in-out;
+			-moz-transition: all 0.1s ease-in-out;
+}
+
+input.taskCheckbox:checked {
+	background-color: #009925;
+}
+
+input.taskCheckbox:checked:after {
+	color: white;
+	content: "\2713";
+	display: block;
+	font-size: 12px;
+	height: 12px;
+	position: absolute;
+	width: 12px;
+	left: 0.5px;
+	bottom: 2px;
+}
+
+input.taskCheckbox + label.taskLabel {
+	color: white;
+}
+
+input.taskCheckbox:checked + label.taskLabel {
+	font-style: italic;
+	color: grey;
+}
+
+input[placeholder] {
+	font-size: 1.1em;
+}
+
 #container {
 	width: 40%;
 	height: 500px;
@@ -118,11 +165,6 @@ li.task:not(:last-child) {
 	opacity: 1;
 }
 
-.taskCheckbox {
-	float: left;
-	margin-right: 10px;
-}
-
 .deleteTaskBtn {
 	float: right;
 	color: white;
@@ -144,49 +186,4 @@ li.task:not(:last-child) {
 
 .deleteTaskBtn:hover {
 	background-color: rgba(255,0,0,0.4);
-}
-
-input.taskCheckbox {
-	position: relative;
-	-webkit-appearance: none;
-	width: 15px;
-	height: 15px;
-	border: 1px solid white;
-	border-radius: 5px;
-	outline: none;
-	margin-left: 5px;
-	text-align: center;
-	cursor: pointer;
-	transition: all 0.1s ease-in-out;
-		-webkit-transition: all 0.1s ease-in-out;
-			-moz-transition: all 0.1s ease-in-out;
-}
-
-input.taskCheckbox:checked {
-	background-color: #009925;
-}
-
-input.taskCheckbox:checked:after {
-	color: white;
-	content: "\2713";
-	display: block;
-	font-size: 12px;
-	height: 12px;
-	position: absolute;
-	width: 12px;
-	left: 0.5px;
-	bottom: 2px;
-}
-
-input.taskCheckbox + label.taskLabel {
-	color: white;
-}
-
-input.taskCheckbox:checked + label.taskLabel {
-	font-style: italic;
-	color: grey;
-}
-
-input[placeholder] {
-	font-size: 1.1em;
 }

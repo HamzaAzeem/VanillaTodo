@@ -136,10 +136,12 @@ function deleteCompleted() {
 }
 
 function deleteAll() {
-	var ul = document.getElementById('taskList');
-	ul.innerHTML = '';
-	taskList = completedTasks = [];
-	saveLocalList();
+	if(( taskList.length > 0 ) && confirm( "Are you sure you want to delete all your tasks?" )) {
+		var ul = document.getElementById('taskList');
+		ul.innerHTML = '';
+		taskList = completedTasks = [];
+		saveLocalList();
+	}
 }
 
 function saveLocalList() {
